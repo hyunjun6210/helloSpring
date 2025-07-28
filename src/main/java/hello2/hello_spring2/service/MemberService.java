@@ -2,15 +2,18 @@ package hello2.hello_spring2.service;
 
 import hello2.hello_spring2.domain.Member;
 import hello2.hello_spring2.repository.MemberRepository;
-import hello2.hello_spring2.repository.MemomryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
